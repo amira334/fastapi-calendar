@@ -48,8 +48,12 @@ def stockSplitCalenarUpdate():
 
     # stock_split_calender.to_csv("stockSplitCalender.csv", index=False)
 
+    stock_split_calender["dtDate"].fillna(0, inplace=True)
+    stock_split_calender["label"].fillna(0, inplace=True)
+    stock_split_calender["SymName"].fillna(0, inplace=True)
     stock_split_calender["numerator"].fillna(0.0, inplace=True)
     stock_split_calender["denominator"].fillna(0.0, inplace=True)
+    stock_split_calender["url"].fillna(0, inplace=True)
 
     saveDataToDatabase(
         stock_split_calender,

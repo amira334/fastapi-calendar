@@ -4,6 +4,7 @@ from earnings_calendar_update import earningCalenarUpdate
 from economic_calender_update import economicCalenarUpdate
 from ipo_calendar_update import ipoCalenarUpdate
 from stock_split_calendar_update import stockSplitCalenarUpdate
+from market_update import marketCalendarUpdate
 
 app = FastAPI()
 
@@ -35,4 +36,10 @@ def ipoCalender():
 @app.get("/stocksplit-calender-data")
 def stockSplitCalender():
     stockSplitCalenarUpdate()
+    return {"message": "Data fetched and updated successfully"}
+
+
+@app.get("/market-calender-data")
+def marketCalendar():
+    marketCalendarUpdate()
     return {"message": "Data fetched and updated successfully"}
