@@ -95,8 +95,6 @@ def marketCalendarUpdate():
     # market_calendar_df["openingHour"].fillna("0", inplace=True)
     # market_calendar_df["openingHour"].fillna("0", inplace=True)
 
-    print("print")
-
     saveDataToDatabase(
         market_calendar_df,
         "Temp_MarketCalendar",

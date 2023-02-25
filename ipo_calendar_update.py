@@ -133,7 +133,6 @@ def ipoCalenarUpdate():
     ipo_calendar["discountsAndCommissionsTotal"].fillna(0.0, inplace=True)
     ipo_calendar["proceedsBeforeExpensesPerShare"].fillna(0.0, inplace=True)
     ipo_calendar["proceedsBeforeExpensesTotal"].fillna(0.0, inplace=True)
-    ipo_calendar.fillna(0, inplace=True)
 
     saveDataToDatabase(
         ipo_calendar,
@@ -165,7 +164,7 @@ def ipoCalenarUpdate():
             "confirmedEffectivenessDate",
             "url",
         ],
-        "Exec GetUpdateipoCalendarData",
+        "Exec prcGetUpdateipoCalendarData",
     )
 
 

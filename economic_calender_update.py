@@ -61,12 +61,6 @@ def economicCalenarUpdate():
     economic_calendar["change"].fillna(0.0, inplace=True)
     economic_calendar["changePercentage"].fillna(0.0, inplace=True)
     economic_calendar["estimate"].fillna(0.0, inplace=True)
-    economic_calendar["event"].fillna(0, inplace=True)
-    economic_calendar["dtDate"].fillna(0, inplace=True)
-    economic_calendar["country"].fillna(0, inplace=True)
-    economic_calendar["estimate"].fillna(0, inplace=True)
-    economic_calendar["impact"].fillna(0, inplace=True)
-    economic_calendar["url"].fillna(0, implace=True)
 
     saveDataToDatabase(
         economic_calendar,

@@ -54,24 +54,8 @@ def dividentCalenarUpdate():
 
     # divident_calendar.to_csv("dividentCalender.csv", index=False)
 
-<<<<<<< HEAD
-    #  null
     divident_calendar["adjDividend"].fillna(0.0, inplace=True)
     divident_calendar["dividend"].fillna(0.0, inplace=True)
-    divident_calendar["recordDate"].fillna(0, inplace=True)
-    divident_calendar["paymentDate"].fillna(0, inplace=True)
-    divident_calendar["declarationDate"].fillna(0, inplace=True)
-=======
-    divident_calendar["dtDate"].fillna(0, inplace=True)
-    divident_calendar["label"].fillna(0, inplace=True)
-    divident_calendar["adjDividend"].fillna(0.0, inplace=True)
-    divident_calendar["dividend"].fillna(0.0, inplace=True)
-    divident_calendar["SymName"].fillna(0, inplace=True)
-    divident_calendar["recordDate"].fillna(0, inplace=True)
-    divident_calendar["paymentDate"].fillna(0, inplace=True)
-    divident_calendar["declarationDate"].fillna(0, inplace=True)
-    divident_calendar["url"].fillna(0, inplace=True)
->>>>>>> 79069876d66d285683ce7dc62c541005b22f0f94
 
     saveDataToDatabase(
         divident_calendar,

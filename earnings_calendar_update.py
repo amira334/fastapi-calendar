@@ -79,9 +79,7 @@ def earningCalenarUpdate():
     earnings_df = earnings_df.drop_duplicates(subset=["symbol"], keep="last")
 
     # earnings confirmed
-    earnings_confirmed_df["date"] = pd.to_datetime(
-        earnings_confirmed_df["date"]
-    )
+    earnings_confirmed_df["date"] = pd.to_datetime(earnings_confirmed_df["date"])
     earnings_confirmed_df = earnings_confirmed_df.sort_values(by=["date"])
     earnings_confirmed_df["date"] = earnings_confirmed_df["date"].dt.strftime(
         "%Y-%m-%d"
@@ -93,16 +91,12 @@ def earningCalenarUpdate():
     earnings_confirmed_df = earnings_confirmed_df.drop_duplicates(
         subset=["symbol"], keep="last"
     )
-    earnings_confirmed_df = earnings_confirmed_df.drop(
-        ["date", "title"], axis=1
-    )
+    earnings_confirmed_df = earnings_confirmed_df.drop(["date", "title"], axis=1)
 
     # merge earnings and confirmed data
     earnings_calendar = earnings_df.merge(earnings_confirmed_df, on=["symbol"])
 
-    earnings_calendar[
-        "url"
-    ] = "https://site.financialmodelingprep.com/developer/docs/"
+    earnings_calendar["url"] = "https://site.financialmodelingprep.com/developer/docs/"
 
     earnings_calendar["eps"].fillna(0.0, inplace=True)
     earnings_calendar["epsEstimated"].fillna(0.0, inplace=True)
